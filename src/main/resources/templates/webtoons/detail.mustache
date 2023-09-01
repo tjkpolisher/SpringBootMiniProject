@@ -1,0 +1,82 @@
+{{>layouts/header}}
+    <style>
+        .wrapper-box {
+            display: inline-block;
+            align-items: center;
+            text-align: center;
+            border: 10px solid #4caf50;
+            border-radius: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px;
+        }
+        .image-box {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            width: 50%;
+        }
+        .image {
+            max-width: 42%;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        .description-box {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 10px;
+            max-width: 50%;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        .info-box {
+            margin-top: 10px;
+        }
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .author {
+            font-style: italic;
+        }
+        .rating {
+            margin-top: 10px;
+        }
+        .age-limit {
+            margin-top: 5px;
+        }
+        .publication-date {
+            margin-top: 5px;
+        }
+        .interest {
+            margin-top: 5px;
+        }
+        .hashtags {
+            margin-top: 5px;
+        }
+    </style>
+
+<div class="wrapper-box">
+    <div class="image-box">
+        {{#webtoons}}
+        <img class="image" src="{{thumbnailUrl}}" alt="이미지 설명">
+        {{/webtoons}}
+    </div>
+        <div class="description-box">
+            {{#webtoons}}
+            <div class="title">{{title}}</div>
+            <div class="info-box">
+                <div class="author">글 작가/그림 작가 : {{writer}} / {{painter}}</div>
+                <div class="rating">별점 : {{starScore}}</div>
+                <div class="age-limit">연령 제한 : {{age}}</div>
+                <div class="publication-date">연재 요일 : {{publishDay}}</div>
+                <div class="interest">관심도 : {{favorite}}</div>
+                <div class="hashtags">해시태그 : {{hashTag}}</div>
+            </div>
+            {{/webtoons}}
+        </div>
+    </div>
+</div>  
+
+{{>layouts/footer}}

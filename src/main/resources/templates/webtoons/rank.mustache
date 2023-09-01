@@ -1,0 +1,22 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thread>
+        <tr>
+            <th scope="col">장르</th>
+            <th scope="col">웹툰 제목</th>
+            <th scope="col">rank</th>
+        </tr>
+    </thread>
+    <tbody>
+        <tr>
+        {{#webtoonRankList}}
+            <th><img src="{{thumbnailUrl}}" alt="Thumbnail" style="max-width: 100%;"></th>
+            <th><a href="/webtoons/{{webtoonId}}">{{title}}</a></th>
+            <th>{{webtoonRank}}위</th>
+        </tr>
+        {{/webtoonRankList}}
+    </tbody>
+</table>
+
+{{>layouts/footer}}

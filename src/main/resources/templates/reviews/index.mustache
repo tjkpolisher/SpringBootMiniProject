@@ -1,0 +1,22 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thread>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+        </tr>
+    </thread>
+    <tbody>
+        {{#reviewList}}
+        <tr>
+            <th>{{id}}</th>
+            <th><a href="/reviews/{{id}}">{{title}}</a></th>
+            <th>{{content}}</th>
+        </tr>
+        {{/reviewList}}
+    </tbody>
+</table>
+<a href="/reviews/new">글 쓰기</a>
+{{>layouts/footer}}
